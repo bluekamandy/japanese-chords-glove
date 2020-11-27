@@ -115,7 +115,26 @@ After some thinking and feeling a little less timid, I used an old leather garde
 
 ## What I learned and next steps
 
-The instrument surprised me and ended up being quite expressive. This probably owes to how expressive chord progressions are. One basic problem with my design is the lack of visual feedback telling you what octave you are on. I think this would be an easy fix either via the user interface or via LED lights of some sort on the glove itself.
+The instrument surprised me and ended up being quite expressive.
+
+Overall I learned the value of short iterations to break down or correct my assumptions. Each step of the way I was able to refine the project and add to it. When I started the project, I had a clear idea that I wanted my hand to be the musical instrument, but the role of the copper tape was not clear because I had never used it before. This project was a great example of how hands-on experimentation can help introduce new concepts.
+
+Here are the major assumptions/mistakes/oversights I was able to correct:
+
+| Step              | Assumption                                                   | Correction                                                   |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Paper Prototype   | I assumed the copper tape would cover the entire hand and be connected [SMH]. | I cut the copper tape to create separate circuits.           |
+| Paper Prototype   | I assumed I would only need 4 chords in a single octave. Because the video describes only 4 chords being necessary, this left the thumb unused. The sounds were very limited. | Expand the range of the instrument by adding two more octaves (Root and 1st.). This necessitated creating a chord class as a simple new data structure that had 3 notes. |
+| Leather Prototype | I assumed that the chords didn't need to be in order [SMH]. I was so focussed on getting the chords programmed, that I forgot that it mattered that they be in order. I chock this up to just wanting to get something working quickly and not thinking too hard about the details. | Reorganized them to be in order, lowest to highest, from index finger to pinky. |
+| Leather Prototype | I assumed I needed to zero out the pitch when each key was released in my software. This created audio artifacts in the software. | Allowed the pitches to remain where they are. Removed any keyReleased statements. Did not perform any unnecessary reassignment of pitch. |
+
+The expressiveness of the project probably owes to how expressive chord progressions are in and of themselves.
+
+One basic problem with my design is the lack of visual feedback telling you what octave you are on. I think this would be an easy fix either via the user interface or via LED lights of some sort on the glove itself.
+
+Another problem is that assigning notes manually to be synthesized was tedious and slow. It would be nice to have a class that did that for you. It would be a matter of creating a spreadsheet with the information in it and programmatically doing the chord progressions. This would require much more learning though.
+
+Another potential opportunity with my Chord3 class is that I could extend it to be able to tell you what chord you are playing. This would be helpful if I ever introduced more visual feedback in the form of text on the on-screen visualization. I could imagine this being helpful for musicians.
 
 ## External Resources and Studies
 
