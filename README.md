@@ -12,7 +12,7 @@ This project relies on some concepts of music theory that were important for me 
 
 ### What is a "Japanese chord progression"?
 
-This project was born after I saw a YouTube video about common chord progressions in modern Japanese classical and anime music.
+This project was born after I saw a YouTube video about common chord progressions observed in modern Japanese classical and anime music.
 
 See [[Sakamoto, Hisaishi, et. al.] - Common Japanese Chord Progressions](https://youtu.be/yKV58VVGV9k) on YouTube.
 
@@ -57,11 +57,11 @@ https://www.youtube.com/watch?v=hDaQF-LNrug
 
 ## Inspirations
 
-This project is inspired by my current exploration of several topics, including ***enactment*** and ***embodiment*** in the field cognitive science. Enactment and embodiment are topics that originated in the 1990s in cognitive science. They arose from a desire to move beyond ***cognitivist*** models of human cognition where thought is defined as a form computation and our brains are basically meat computers. Cognitivism originated in the 1950s and sadly influences a lot of thought today. Embodiment proposes that our mind may be larger than our brain and that our minds are not at all like computers, because unlike computers, our minds engage in ***[autopoiesis](https://en.wikipedia.org/wiki/Autopoiesis)***, or self organization and self-maintenance, to maintain homeostasis.
+This project is inspired by my current exploration of several topics, including ***enactment*** and ***embodiment*** in the field cognitive science. Enactment and embodiment are topics that [originated in the 1990s](https://mitpress.mit.edu/books/embodied-mind) in cognitive science. They arose from a desire to move beyond [***cognitivist***](https://en.wikipedia.org/wiki/Cognitivism_%28psychology%29) models of human cognition where thought is defined as a form computation and our brains are basically computers made out of meat. Cognitivism originated in the 1950s and sadly still influences a lot of thought today. Embodiment proposes that our mind may be larger than our brain and that our minds are not at all like computers. One reason stated for this (among many others) is that unlike computers, our minds engage in ***[autopoiesis](https://en.wikipedia.org/wiki/Autopoiesis)***, or self organization and self-maintenance, to maintain homeostasis.
 
-The COVID-19 pandemic has made me accutely aware of being so dependent on traditional digital interfaces, like screens, reinforces the mind-body split. I find myself always trying to get "out of my head." In combatting this, I've developed habits of going outside, walking on grass barefoot, playing piano, petting my dog, meditating, and generally trying to have more embodied experiences.
+The COVID-19 pandemic has made me accutely aware that being so dependent of traditional digital interfaces, like screens, only reinforces the mind-body split. I find myself always trying to get "out of my head." In combatting this, I've tried hard to develop habits of going outside, walking on grass barefoot, playing piano, petting my dog, meditating, and generally trying to have more embodied experiences out in the world.
 
-Making a musical instrument I could play with my hand, or turning my hand into a musical instrument is an extension of these explorations.
+Making a musical instrument I could play with my hand or turning my hand into a musical instrument is an extension of these ideas and explorations.
 
 ## Equipment Used
 
@@ -79,15 +79,33 @@ Making a musical instrument I could play with my hand, or turning my hand into a
 
 ### User Interface
 
-The user interface of my project is very simple. Indeed it isn't really a user interface, but rather it is a visualization of what is happening on the hardware. In that sense it is a way of offering ***non-auditory visual feedback*** to the user.
+The user interface of my project is very simple. Indeed it isn't really a user interface because you can't interact with it. Rather, it is a visualization of what is happening on the hardware. In that sense it is a way of offering ***non-auditory visual feedback*** to the user.
 
 ![User Interface](images/UI.gif)
 
-The interface has 5 buttons, one for each finger.
+| Button/Finger | Color  | Behavior                                                     |
+| ------------- | ------ | ------------------------------------------------------------ |
+| Thumb         | White  | Shift up one octave with each tap, i.e. it starts at root, goes to 1st, then 2nd, then resets to the root. |
+| Index         | Red    | III or E chord                                               |
+| Middle        | Orange | IV or F chord                                                |
+| Ring          | Yellow | V or G chord                                                 |
+| Pinky         | Green  | VI or A chord                                                |
 
 ### Hardware
 
+Originally, I thought through the idea using cardboard.
 
+Owing to my limited understanding of hardware, I accidentally connected everything and created one giant circuit on this prototype. In the end I'm glad I made a rough prototype so I could work through this really basic mistake. I cut the copper tape to break the circuit and it was fine.
+
+![original-prototype](images/original-prototype.jpg)
+
+After some thinking and feeling a little less timid, I used an old leather gardening glove that I had lying around. Initially I thought that the copper tape would not stick to the leather, but it was actually fine. The extra leather turned out to be more secure for the aligator clips.
+
+
+
+![second-prototype-1](images/second-prototype-1.jpg)
+
+![second-prototype-2](images/second-prototype-2.jpg)
 
 ### The software/hardware in action.
 
@@ -95,11 +113,9 @@ The interface has 5 buttons, one for each finger.
 
 [See original video with sound on Vimeo](https://vimeo.com/484577141).
 
-### 
-
 ## What I learned and next steps
 
-
+The instrument surprised me and ended up being quite expressive. This probably owes to how expressive chord progressions are. One basic problem with my design is the lack of visual feedback telling you what octave you are on. I think this would be an easy fix either via the user interface or via LED lights of some sort on the glove itself.
 
 ## External Resources and Studies
 
@@ -121,11 +137,9 @@ https://www.8notes.com/piano_chord_chart/f.asp
 
 ## Acknowledgements
 
+I learned how to use the basic synthesis system in Minim by looking at code that was made available online.
+
 Keyboard Piano by Neel Virdy
 
 https://www.openprocessing.org/sketch/99584/#
-
-University of New South Wales: Note names, MIDI numbers and Frequencies
-
-https://newt.phys.unsw.edu.au/jw/notes.html
 
