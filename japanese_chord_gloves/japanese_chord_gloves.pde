@@ -14,6 +14,9 @@ Japanese Chord Gloves
  An audio library for Processing
  https://github.com/ddf/Minim
  
+ Gavin Leeper for his video on common Japanese Chord Progressions
+ https://youtu.be/yKV58VVGV9k
+ 
  */
 
 import ddf.minim.analysis.*;
@@ -39,6 +42,11 @@ boolean bPinky;
 
 int octave = 0;
 
+color octave0 = #8E8E8E;
+color octave1 = #C1C1C1;
+color octave2 = #F5F5F5;
+
+
 // Lowest Octave / Root Position
 Chord3 iii_E_0;
 Chord3 iv_F_0;
@@ -56,8 +64,6 @@ Chord3 iii_E_2;
 Chord3 iv_F_2;
 Chord3 v_G_2;
 Chord3 vi_A_2;
-
-color fillVal = color(255);
 
 void setup() {
   size(500, 500);
@@ -93,8 +99,19 @@ void setup() {
 }
 
 void draw() {
-  background(#f4f4f4);
+  
+  if (octave == 0) {
+    background(octave0);
+  } 
+  if (octave == 1) {
+    background(octave1);
+  } 
+  if (octave == 2){
+    background(octave2);
+  }
+  
   image(base, width/2.0, height/2.0);
+  
   if (bThumb) {
     image(thumb, width/2.0, height/2.0);
   }

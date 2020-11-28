@@ -113,6 +113,12 @@ After some thinking and feeling a little less timid, I used an old leather garde
 
 [See original video with sound on Vimeo](https://vimeo.com/484577141).
 
+After doing this initial test, I thought it was difficult to play without any feedback as to what octave you were on, so I adjusted the code and gave a clear indication of the octave through the background grey color. This enabled me to actually start "playing" the instrument with some idea of what I was doing.
+
+![added-octave-feedback](images/added-octave-feedback.gif)
+
+[See the origianl video with sound on Vimeo.](https://vimeo.com/484632647)
+
 ## What I learned and next steps
 
 The instrument surprised me and ended up being quite expressive. The expressiveness of the project probably owes to how expressive chord progressions are in and of themselves.
@@ -123,10 +129,11 @@ Here are the major assumptions/mistakes/oversights I was able to correct:
 
 | Step              | Assumption                                                   | Correction                                                   |
 | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Paper Prototype   | I assumed the copper tape would cover the entire hand and be connected [SMH]. | I cut the copper tape to create separate circuits.           |
+| Paper Prototype   | I assumed the copper tape would cover the entire hand and be connected [facepalm]. | I cut the copper tape to create separate circuits.           |
 | Paper Prototype   | I assumed I would only need 4 chords in a single octave. Because the video describes only 4 chords being necessary, this left the thumb unused. The sounds were very limited. | Expand the range of the instrument by adding two more octaves (Root and 1st.). This necessitated creating a chord class as a simple new data structure that had 3 notes. |
-| Leather Prototype | I assumed that the chords didn't need to be in order [SMH]. I was so focussed on getting the chords programmed, that I forgot that it mattered that they be in order. I chock this up to just wanting to get something working quickly and not thinking too hard about the details. | Reorganized them to be in order, lowest to highest, from index finger to pinky. |
+| Leather Prototype | I assumed that the chords didn't need to be in order [facepalm]. I was so focussed on getting the chords programmed, that I forgot that it mattered that they be in order. I chock this up to just wanting to get something working quickly and not thinking too hard about the details. | Reorganized them to be in order, lowest to highest, from index finger to pinky. |
 | Leather Prototype | I assumed I needed to zero out the pitch when each key was released in my software. This created audio artifacts in the software. | Allowed the pitches to remain where they are. Removed any keyReleased statements. Did not perform any unnecessary reassignment of pitch. |
+| Leather Prototype | I assumed you didn't need feedback when you changed octaves. This made playing very difficult. | I used 3 different shades of gray to signify the octaves. The darkest is the root. The lightest is the 2nd Inversion. |
 
 One basic problem with my design is the lack of visual feedback telling you what octave you are on. I think this would be an easy fix either via the user interface or via LED lights of some sort on the glove itself.
 
@@ -134,7 +141,9 @@ Another problem is that assigning notes manually to be synthesized was tedious a
 
 Another potential opportunity with my Chord3 class is that I could extend it to be able to tell you what chord you are playing. This would be helpful if I ever introduced more visual feedback in the form of text on the on-screen visualization. I could imagine this being helpful for musicians.
 
-## External Resources and Studies
+Overall I loved the experience of prototyping with the Makey Makey. It reinforces my belief in constructivist learning strategies and "learning by doing." I also believe systems like this that abstract away challenging concepts can lead people to learn more about the world around them. Not only was I able to explore basic electronics, but this project enabled me to pursue other ideas floating around in my head like music theory and embodiment. I feel that learning in this way is concrete, very expressive, and self-reinforcing.
+
+## External Resources
 
 Images of notes with corresponding frequencies:
 

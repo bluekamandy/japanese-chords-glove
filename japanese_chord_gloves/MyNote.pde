@@ -10,7 +10,7 @@ class MyNote implements AudioSignal
          freq = pitch;
          level = amplitude;
          sine = new SineWave(freq, level, out.sampleRate());
-         alph = 0.97;
+         alph = 0.98;
          out.addSignal(this);
      }
 
