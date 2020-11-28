@@ -12,6 +12,8 @@ This project relies on some concepts of music theory that were important for me 
 
 ### What is a "Japanese chord progression"?
 
+***Important:*** I use the terms "Japanese chord progression" very lightly and I don't actually think it's possible to attribute these 4 basic chords to Japanese music, although you'll see why I do so below. It's an oversimplification for the purpose of serving as a point of departure from music I love.
+
 This project was born after I saw a YouTube video about common chord progressions observed in modern Japanese classical and anime music.
 
 See [[Sakamoto, Hisaishi, et. al.] - Common Japanese Chord Progressions](https://youtu.be/yKV58VVGV9k) on YouTube.
@@ -69,6 +71,8 @@ Making a musical instrument I could play with my hand or turning my hand into a 
 - An old leather gardener's glove.
 - [Cardboard for prototyping](https://www.amazon.com/Corrugated-Cardboard-Sheets-24-Pack-Inserts/dp/B079QY6MMX/ref=sr_1_1?dchild=1&keywords=juvale+8.5+11+cardboard&qid=1606510018&sr=8-1)
 - [Copper tape](https://www.amazon.com/Zehhe-Copper-Foil-Double-Sided-Conductive/dp/B01MR5DSCM).
+- Electric Tape
+- Aluminum Foil
 
 ## Software Used
 
@@ -99,13 +103,15 @@ Owing to my limited understanding of hardware, I accidentally connected everythi
 
 ![original-prototype](images/original-prototype.jpg)
 
-After some thinking and feeling a little less timid, I used an old leather gardening glove that I had lying around. Initially I thought that the copper tape would not stick to the leather, but it was actually fine. The extra leather turned out to be more secure for the aligator clips.
-
-
+After some thinking and feeling a little less timid, I used an old leather gardening glove that I had lying around. Initially I thought that the copper tape would not stick to the leather, but it was actually fine. The extra leather at the fingertips turned out to be more secure for the aligator clips.
 
 ![second-prototype-1](images/second-prototype-1.jpg)
 
 ![second-prototype-2](images/second-prototype-2.jpg)
+
+After this version I started to question how "embodied" this interaction actually was, given that I'm covering the hand with a leather glove that dampens the sensory experience. This led me to eliminate the glove entirely. Other directions I may have wanted to go in to enhance sensation might have been to use liquid latex, possibly alternative conductive materials, but electrical tape seemed a good first step.
+
+![no-glove](images/no-glove.gif)
 
 ### The software/hardware in action.
 
@@ -117,7 +123,13 @@ After doing this initial test, I thought it was difficult to play without any fe
 
 ![added-octave-feedback](images/added-octave-feedback.gif)
 
-[See the origianl video with sound on Vimeo.](https://vimeo.com/484632647)
+[See the original video with sound on Vimeo.](https://vimeo.com/484632647)
+
+Here I am playing the version without the glove which includes a ring on my right pinky, instead of holding the ground electrode. Although it makes the instrument somewhat time consuming to put on and is impractical for that reason, the gloveless version affords much better interactivity between the two hands. The gloved version essentially made the hand into a static object. It didn't encourage movement, and the video of my experimentation shows that. The gloveless version, however, does encourage a more diverse array of movement and motion with both hands. The ring on the right pinky for the ground also allows more freedom of motion as it liberates all fingers to be used simultaneously while playing.
+
+![no-glove-with-ui](images/no-glove-with-ui.gif)
+
+[See the original video with sound on Vimeo.](https://vimeo.com/484890097)
 
 ## What I learned and next steps
 
@@ -125,17 +137,21 @@ The instrument surprised me and ended up being quite expressive. The expressiven
 
 Overall I learned the value of short iterations to break down or correct my assumptions. Each step of the way I was able to refine the project and add to it. When I started the project, I had a clear idea that I wanted my hand to be the musical instrument, but the role of the copper tape was not clear because I had never used it before. This project was a great example of how hands-on experimentation can help introduce new concepts.
 
-Here are the major assumptions/mistakes/oversights I was able to correct:
+Here are the major **assumptions/mistakes/oversights I was able to correct**:
 
-| Step              | Assumption                                                   | Correction                                                   |
-| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Paper Prototype   | I assumed the copper tape would cover the entire hand and be connected [facepalm]. | I cut the copper tape to create separate circuits.           |
-| Paper Prototype   | I assumed I would only need 4 chords in a single octave. Because the video describes only 4 chords being necessary, this left the thumb unused. The sounds were very limited. | Expand the range of the instrument by adding two more octaves (Root and 1st.). This necessitated creating a chord class as a simple new data structure that had 3 notes. |
-| Leather Prototype | I assumed that the chords didn't need to be in order [facepalm]. I was so focussed on getting the chords programmed, that I forgot that it mattered that they be in order. I chock this up to just wanting to get something working quickly and not thinking too hard about the details. | Reorganized them to be in order, lowest to highest, from index finger to pinky. |
-| Leather Prototype | I assumed I needed to zero out the pitch when each key was released in my software. This created audio artifacts in the software. | Allowed the pitches to remain where they are. Removed any keyReleased statements. Did not perform any unnecessary reassignment of pitch. |
-| Leather Prototype | I assumed you didn't need feedback when you changed octaves. This made playing very difficult. | I used 3 different shades of gray to signify the octaves. The darkest is the root. The lightest is the 2nd Inversion. |
+| Step                | Assumption                                                   | Correction                                                   |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Paper Prototype     | I assumed the copper tape would cover the entire hand and be connected [facepalm]. | I cut the copper tape to create separate circuits.           |
+| Paper Prototype     | I assumed I would only need 4 chords in a single octave. Because the video describes only 4 chords being necessary, this left the thumb unused. The sounds were very limited. | Expand the range of the instrument by adding two more octaves (Root and 1st.). This necessitated creating a chord class as a simple new data structure that had 3 notes. |
+| Leather Prototype   | I assumed that the chords didn't need to be in order [facepalm]. I was so focussed on getting the chords programmed, that I forgot that it mattered that they be in order. I chock this up to just wanting to get something working quickly and not thinking too hard about the details. | Reorganized them to be in order, lowest to highest, from index finger to pinky. |
+| Leather Prototype   | I assumed I needed to zero out the pitch when each key was released in my software. This created audio artifacts in the software. | Allowed the pitches to remain where they are. Removed any keyReleased statements. Did not perform any unnecessary reassignment of pitch. |
+| Leather Prototype   | I assumed you didn't need feedback when you changed octaves. This made playing very difficult. | I used 3 different shades of gray to signify the octaves. The darkest is the root. The lightest is the 2nd Inversion. |
+| Gloveless Prototype | I assumed that the experience of the glove would be embodied enough to encourage a novel form of interaction. In fact, the glove deadened the sensation in my hand and turned it, largely, into a static object. | Removed the glove entirely and tried electrical tape to put the instrument directly on the body and maintain some sensation. |
+| Gloveless Prototype | I assumed that it would be OK to just use a single finger on the right hand so that I could hold the ground electrode. | I created a ring out of aluminum foil that attached to my pinky so that I could play using all of my fingers. |
 
 One basic problem with my design is the lack of visual feedback telling you what octave you are on. I think this would be an easy fix either via the user interface or via LED lights of some sort on the glove itself.
+
+Another problem is that the wires and aligator clips encumber movement on an instrument designed to encourage freedom of motion. If I were to continue iterating, eventually the wires would need to disappear.
 
 Another problem is that assigning notes manually to be synthesized was tedious and slow. It would be nice to have a class that did that for you. It would be a matter of creating a spreadsheet with the information in it and programmatically doing the chord progressions. This would require much more learning though.
 
