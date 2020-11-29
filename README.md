@@ -12,7 +12,7 @@ This project relies on some concepts of music theory that were important for me 
 
 ### What is a "Japanese chord progression"?
 
-***Important:*** I use the terms "Japanese chord progression" very lightly and I don't actually think it's possible to attribute these 4 basic chords to Japanese music, although you'll see why I do so below. It's an oversimplification for the purpose of serving as a point of departure from music I love.
+***Note:*** I use the terms "Japanese chord progression" very lightly and I don't actually think it's possible to attribute these 4 basic chords to Japanese music, although you'll see why I do so below. It's an oversimplification for the purpose of serving as a point of departure from music I love.
 
 This project was born after I saw a YouTube video about common chord progressions observed in modern Japanese classical and anime music.
 
